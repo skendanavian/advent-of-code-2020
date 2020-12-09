@@ -13,7 +13,18 @@ const res = readFile("./02-data", "utf-8")
 
     const count = password.split("").filter((e) => e === letter).length;
 
-    return count >= min && count <= max;
+    const index1 = min - 1;
+    const index2 = max - 1;
+    console.log(password);
+    console.log(letter);
+    console.log(index1);
+    console.log(index2);
+
+    return (
+      (password[index1] === letter || password[index2] === letter) &&
+      !(password[index1] === letter && password[index2] === letter)
+    );
   });
 
+console.log(res);
 console.log(res.length);

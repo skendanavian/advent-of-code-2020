@@ -2,19 +2,12 @@
 // multiply them together
 
 const numFinder = function (data) {
-  num1 = 0;
-  num2 = 0;
-  num3 = 0;
   let multiplied = 0;
 
   for (i = 0; i < data.length; i++) {
     for (n = 1; n < data.length; n++) {
       for (j = 2; j < data.length; j++) {
         if (data[i] + data[n] + data[j] === 2020) {
-          console.log("made it");
-          num1 = data[i];
-          num2 = data[n];
-          num3 = data[j];
           multiplied = data[i] * data[n] * data[j];
           console.log(multiplied);
           return multiplied;

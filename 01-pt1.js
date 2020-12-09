@@ -1,3 +1,20 @@
+// find two entries that sum to 2020
+// multiply them together
+
+const numFinder = function (data) {
+  let multiplied = 0;
+
+  for (i = 0; i < data.length; i++) {
+    for (j = 1; j < data.length; j++) {
+      if (data[i] + data[j] === 2020) {
+        multiplied = data[i] * data[j];
+        console.log(multiplied);
+        return multiplied;
+      }
+    }
+  }
+};
+
 const data = [
   1757,
   1890,
@@ -200,27 +217,5 @@ const data = [
   1791,
   1975,
 ];
-
-// find two entries that sum to 2020
-// multiply them together
-
-const numFinder = function (data) {
-  num1 = 0;
-  num2 = 0;
-  let multiplied = 0;
-
-  for (i = 0; i < data.length; i++) {
-    for (j = 1; j < data.length; j++) {
-      if (data[i] + data[j] === 2020) {
-        console.log("made it");
-        num1 = data[i];
-        num2 = data[j];
-        multiplied = data[i] * data[j];
-        console.log(multiplied);
-        return multiplied;
-      }
-    }
-  }
-};
 
 numFinder(data);
