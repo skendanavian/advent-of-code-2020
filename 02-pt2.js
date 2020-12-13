@@ -7,18 +7,14 @@ const res = readFile("./02-data", "utf-8")
   .filter((str) => str.trim())
   .filter((line) => {
     const [rule, password] = line.split(": ");
+    console.log(rule.match(/(\d+)\-(\d+) (\w)/));
     let [, min, max, letter] = rule.match(/(\d+)\-(\d+) (\w)/);
     min = parseInt(min, 10);
     max = parseInt(max, 10);
 
     const count = password.split("").filter((e) => e === letter).length;
-
     const index1 = min - 1;
     const index2 = max - 1;
-    console.log(password);
-    console.log(letter);
-    console.log(index1);
-    console.log(index2);
 
     return (
       (password[index1] === letter || password[index2] === letter) &&
@@ -26,5 +22,4 @@ const res = readFile("./02-data", "utf-8")
     );
   });
 
-console.log(res);
 console.log(res.length);
