@@ -26,4 +26,6 @@ const countTrees = function (data) {
   console.log(treeCount);
 };
 
+
+
 countTrees(res);
